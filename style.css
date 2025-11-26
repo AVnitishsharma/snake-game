@@ -47,7 +47,7 @@ main section {
 main section .infos {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 main section .infos .info {
   padding: var(--space-xs);
@@ -58,10 +58,9 @@ main section .board {
   border: 1px solid var(--border-primary-color);
   flex-grow: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 30px);
-  grid-template-rows: repeat(auto-fill, 30px);
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
 }
-main section .board .box {
-  background-color: aqua;
+main section .board .block {
   border: 1px solid white;
 }/*# sourceMappingURL=style.css.map */

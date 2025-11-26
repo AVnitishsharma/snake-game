@@ -55,7 +55,7 @@ main{
     .infos{
       width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
 
       .info{
         padding: var(--space-xs);
@@ -68,14 +68,12 @@ main{
       border: 1px solid var(--border-primary-color);
       flex-grow: 1;
       display: grid;
-      grid-template-columns: repeat(auto-fill,30px);
-      grid-template-rows: repeat(auto-fill,30px);
+      grid-template-columns: repeat(auto-fill, minmax(50px,1fr));
+      grid-template-rows: repeat(auto-fill, minmax(50px,1fr));
 
-      .box{
-        background-color: aqua;
+      .block{
+        // background-color: aqua;
         border: 1px solid white;
-        // height: 30px;
-        // width: 20px;
       }
     }
   }
