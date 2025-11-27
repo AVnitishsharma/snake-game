@@ -63,4 +63,7 @@ main section .board {
 }
 main section .board .block {
   border: 1px solid white;
+}
+main section .board .fill {
+  background-color: aqua;
 }/*# sourceMappingURL=style.css.map */
