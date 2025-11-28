@@ -7,12 +7,15 @@
 :root{
   // background-color
   --bg-pramiry-color: #0f0e0e;
+  --bg-snake-color:aqua;
+  --bg-food-color:rgb(255, 47, 0);
 
   // text-color
   --text-primary-color: #f1f1f1;
 
   // border-color
   --border-primary-color: #6f6f6f;
+  --box-border-color:rgb(20, 20, 20);
 
   //border radies 
   --border-radies-xs: 4px;
@@ -45,7 +48,7 @@ main{
   width: 100%;
   height: 100%;
 
-  section{
+  .main{
     height: 100%;
     padding: var(--space-sm);
     display: flex;
@@ -55,7 +58,7 @@ main{
     .infos{
       width: 100%;
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-around;
 
       .info{
         padding: var(--space-xs);
@@ -68,16 +71,63 @@ main{
       border: 1px solid var(--border-primary-color);
       flex-grow: 1;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(50px,1fr));
-      grid-template-rows: repeat(auto-fill, minmax(50px,1fr));
+      grid-template-columns: repeat(auto-fill, minmax(30px,1fr));
+      grid-template-rows: repeat(auto-fill, minmax(30px,1fr));
 
       .block{
-        // background-color: aqua;
-        border: 1px solid white;
+        border: 1px solid var(--box-border-color);
+        border-radius: var(--border-radies-sm);
       }
       .fill{
-        background-color: aqua;
+        background-color: var(--bg-snake-color)
       }
+      .food{
+        background-color: var(--bg-food-color);
+      }
+    }
+  }
+
+  .modal{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    background-color: #41414150;
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .start-game, .game-over{
+      height: 15vh;
+      width: 25vw;
+      border: 2px solid var(--border-primary-color);
+      border-radius: var(--border-radies-lg);
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: column;
+      background-color: #0f0e0e;
+      h3{
+        font-size: 1.5vw;
+      }
+      .btn{
+        font-size: 1.3vw;
+        padding: var(--space-xs) var(--space-md);
+        background-color: white;
+        color: black;
+        border: 1px solid white;
+        border-radius: var(--border-radies-sm);
+        transition: all 0.3s ease-in-out;
+
+      }
+      .btn:hover{
+        transform: scale(1.1);
+        color: white;
+        background-color: black;
+      }
+    }
+    .game-over{
+      display: none;
     }
   }
 }

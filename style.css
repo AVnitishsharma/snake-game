@@ -6,8 +6,11 @@
 
 :root {
   --bg-pramiry-color: #0f0e0e;
+  --bg-snake-color:aqua;
+  --bg-food-color:rgb(255, 47, 0);
   --text-primary-color: #f1f1f1;
   --border-primary-color: #6f6f6f;
+  --box-border-color:rgb(20, 20, 20);
   --border-radies-xs: 4px;
   --border-radies-sm: 8px;
   --border-radies-md: 16px;
@@ -37,33 +40,80 @@ main {
   width: 100%;
   height: 100%;
 }
-main section {
+main .main {
   height: 100%;
   padding: var(--space-sm);
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
 }
-main section .infos {
+main .main .infos {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
-main section .infos .info {
+main .main .infos .info {
   padding: var(--space-xs);
   border: 1px solid var(--border-primary-color);
   border-radius: var(--border-radies-sm);
 }
-main section .board {
+main .main .board {
   border: 1px solid var(--border-primary-color);
   flex-grow: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(30px, 1fr));
 }
-main section .board .block {
+main .main .board .block {
+  border: 1px solid var(--box-border-color);
+  border-radius: var(--border-radies-sm);
+}
+main .main .board .fill {
+  background-color: var(--bg-snake-color);
+}
+main .main .board .food {
+  background-color: var(--bg-food-color);
+}
+main .modal {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  background-color: rgba(65, 65, 65, 0.3137254902);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .modal .start-game, main .modal .game-over {
+  height: 15vh;
+  width: 25vw;
+  border: 2px solid var(--border-primary-color);
+  border-radius: var(--border-radies-lg);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  background-color: #0f0e0e;
+}
+main .modal .start-game h3, main .modal .game-over h3 {
+  font-size: 1.5vw;
+}
+main .modal .start-game .btn, main .modal .game-over .btn {
+  font-size: 1.3vw;
+  padding: var(--space-xs) var(--space-md);
+  background-color: white;
+  color: black;
   border: 1px solid white;
+  border-radius: var(--border-radies-sm);
+  transition: all 0.3s ease-in-out;
 }
-main section .board .fill {
-  background-color: aqua;
+main .modal .start-game .btn:hover, main .modal .game-over .btn:hover {
+  transform: scale(1.1);
+  color: white;
+  background-color: black;
+}
+main .modal .game-over {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
