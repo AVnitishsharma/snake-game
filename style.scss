@@ -98,8 +98,8 @@ main{
     align-items: center;
     justify-content: center;
     .start-game, .game-over{
-      height: 15vh;
-      width: 25vw;
+      height: clamp(10vh, 12vh ,15vh);
+      width: clamp(20vh, 25vw, 30vw);
       border: 2px solid var(--border-primary-color);
       border-radius: var(--border-radies-lg);
       display: flex;
@@ -108,10 +108,11 @@ main{
       flex-direction: column;
       background-color: #0f0e0e;
       h3{
-        font-size: 1.5vw;
+        font-size: clamp(10px, 15px, 20px);
+        text-align: center;
       }
       .btn{
-        font-size: 1.3vw;
+        font-size: clamp(10px, 15px, 20px);
         padding: var(--space-xs) var(--space-md);
         background-color: white;
         color: black;

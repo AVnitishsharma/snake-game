@@ -87,8 +87,8 @@ main .modal {
   justify-content: center;
 }
 main .modal .start-game, main .modal .game-over {
-  height: 15vh;
-  width: 25vw;
+  height: 12vh;
+  width: clamp(20vh, 25vw, 30vw);
   border: 2px solid var(--border-primary-color);
   border-radius: var(--border-radies-lg);
   display: flex;
@@ -98,10 +98,11 @@ main .modal .start-game, main .modal .game-over {
   background-color: #0f0e0e;
 }
 main .modal .start-game h3, main .modal .game-over h3 {
-  font-size: 1.5vw;
+  font-size: 15px;
+  text-align: center;
 }
 main .modal .start-game .btn, main .modal .game-over .btn {
-  font-size: 1.3vw;
+  font-size: 15px;
   padding: var(--space-xs) var(--space-md);
   background-color: white;
   color: black;

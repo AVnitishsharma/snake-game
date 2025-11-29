@@ -26,7 +26,7 @@ let direction = "right"
 
 let food = { x: Math.floor(Math.random() * rows), y:Math.floor(Math.random() * cols)}
 
-const blocks = [];
+// smake logic
 let snake = [
   {
     x:1, y:3
@@ -37,6 +37,8 @@ let snake = [
   }
 ];
 
+// block making logic
+const blocks = [];
 for (let row = 0; row < rows ; row++) {
   for(let col = 0; col < cols ; col++) {
     const block = document.createElement('div')
@@ -46,6 +48,7 @@ for (let row = 0; row < rows ; row++) {
   }
 }
 
+// start logic
 function render() {
   let head = null
   
@@ -100,6 +103,7 @@ function render() {
 
 };
 
+// start button logc
 startBtn.addEventListener("click", () => {
   modal.style.display = "none"
   intervalId = setInterval(() => {render() },300)
@@ -118,9 +122,10 @@ startBtn.addEventListener("click", () => {
   }, 1000)
 });
 
-restartBtn.addEventListener("click", restartGame)
+
 
 //restart game logic
+restartBtn.addEventListener("click", restartGame)
 function restartGame(){
 
   scoreElement.innerHTML = 0
