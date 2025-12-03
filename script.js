@@ -146,7 +146,7 @@ function restartGame(){
     }
   ]
   direction = "right"
-  intervalId = setInterval(() => {render() },300)
+  intervalId = setInterval(() => {render() },1000)
 
 }
 
