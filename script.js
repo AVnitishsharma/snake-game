@@ -93,12 +93,14 @@ function render() {
 
   snake.forEach(segment => {
     blocks[ `${segment.x}-${segment.y}` ].classList.remove("fill")
+    blocks[ `${segment.x}-${segment.y}` ].style.backgroundColor = ""
   })
 
   snake.unshift(head)
   snake.pop()
-  snake.forEach(segment => {
+  snake.forEach((segment, index) => {
     blocks[ `${segment.x}-${segment.y}` ].classList.add("fill")
+    blocks[ `${segment.x}-${segment.y}` ].style.backgroundColor = `hsl(${index * 20}, 100%, 50%)`
   })
 
 };
@@ -131,6 +133,14 @@ function restartGame(){
   scoreElement.innerHTML = 0
   score = 0
   time = '00-00'
+
+  // Clear the board colors from the previous game
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < cols; col++) {
+      blocks[`${row}-${col}`].classList.remove("fill")
+      blocks[`${row}-${col}`].style.backgroundColor = ""
+    }
+  }
 
   modal.style.display = "none"
   blocks[ `${food.x}-${food.y}`].classList.remove("food")

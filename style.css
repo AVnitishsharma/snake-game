@@ -6,7 +6,7 @@
 
 :root {
   --bg-pramiry-color: #0f0e0e;
-  --bg-snake-color:aqua;
+  --bg-snake-color: rgb(76, 249, 249);
   --bg-food-color:rgb(255, 47, 0);
   --text-primary-color: #f1f1f1;
   --border-primary-color: #6f6f6f;
@@ -66,7 +66,7 @@ main .main .board {
 }
 main .main .board .block {
   border: 1px solid var(--box-border-color);
-  border-radius: var(--border-radies-md);
+  border-radius: var(--border-radies-sm);
 }
 main .main .board .fill {
   background-color: var(--bg-snake-color);
@@ -117,4 +117,77 @@ main .modal .start-game .btn:hover, main .modal .game-over .btn:hover {
 }
 main .modal .game-over {
   display: none;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* Snake Head Styles */
+.snake-head {
+  position: relative;
+  z-index: 10; /* Head should be on top */
+}
+
+/* Eyes (using ::before) */
+.snake-head::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  /* Black pupil, White eye */
+  background-image: 
+    radial-gradient(circle, black 2px, white 3px, transparent 4px),
+    radial-gradient(circle, black 2px, white 3px, transparent 4px);
+}
+
+/* Tongue (using ::after) */
+.snake-head::after {
+  content: '';
+  position: absolute;
+  background-color: red;
+}
+
+/* Direction: RIGHT */
+.head-right::before {
+  background-position: 20px 5px, 20px 17px; 
+}
+.head-right::after {
+  width: 10px;
+  height: 4px;
+  top: 13px;
+  right: -8px;
+}
+
+/* Direction: LEFT */
+.head-left::before {
+  background-position: 2px 5px, 2px 17px; 
+}
+.head-left::after {
+  width: 10px;
+  height: 4px;
+  top: 13px;
+  left: -8px;
+}
+
+/* Direction: UP */
+.head-up::before {
+  background-position: 5px 2px, 17px 2px; 
+}
+.head-up::after {
+  width: 4px;
+  height: 10px;
+  left: 13px;
+  top: -8px;
+}
+
+/* Direction: DOWN */
+.head-down::before {
+  background-position: 5px 20px, 17px 20px; 
+}
+.head-down::after {
+  width: 4px;
+  height: 10px;
+  left: 13px;
+  bottom: -8px;
+}
+/*# sourceMappingURL=style.css.map */
