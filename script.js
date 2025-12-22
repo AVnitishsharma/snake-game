@@ -121,7 +121,7 @@ startBtn.addEventListener("click", () => {
 
     time = `${min}-${sec}`
     timeElement.innerHTML = time
-  }, 1000)
+  }, 300)
 });
 
 
