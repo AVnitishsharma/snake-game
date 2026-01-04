@@ -100,7 +100,7 @@ function render() {
   snake.pop()
   snake.forEach((segment, index) => {
     blocks[ `${segment.x}-${segment.y}` ].classList.add("fill")
-    blocks[ `${segment.x}-${segment.y}` ].style.backgroundColor = `hsl(${index * 20}, 100%, 50%)`
+    blocks[ `${segment.x}-${segment.y}` ].style.backgroundColor = `hsl(${index * 10}, 100%, 50%)`
   })
 
 };
@@ -156,7 +156,7 @@ function restartGame(){
     }
   ]
   direction = "right"
-  intervalId = setInterval(() => {render() },1000)
+  intervalId = setInterval(() => {render() },300)
 
 }
 
